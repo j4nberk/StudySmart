@@ -12,11 +12,16 @@ android/key.properties
 android/captures/
 android/gradlew
 android/gradlew.bat
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 
 # iOS
 ios/Pods/
 ios/.symlinks/
 ios/Flutter/flutter_export_environment.sh
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Runner/GeneratedPluginRegistrant.h
+ios/Runner/GeneratedPluginRegistrant.m
 
 # macOS
 macos/Flutter/GeneratedPluginRegistrant.swift
