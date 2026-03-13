@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/analysis_result.dart';
 import '../viewmodels/app_view_model.dart';
 import '../theme/study_smart_theme.dart';
 import 'document_upload_view.dart';

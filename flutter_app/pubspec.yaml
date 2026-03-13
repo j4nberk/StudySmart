@@ -25,6 +25,7 @@ dependencies:
 
   # PDF text extraction - null-safe, supports Android and iOS
   syncfusion_flutter_pdf: ^27.1.58
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
