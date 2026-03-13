@@ -33,17 +33,19 @@ class _SettingsViewState extends State<SettingsView> {
   }
 
   static const _modelDisplayNames = {
+    'gemini-2.0-pro-exp': 'Gemini 2.0 Pro (Deneysel)',
     'gemini-2.0-flash': 'Gemini 2.0 Flash (Önerilen)',
-    'gemini-1.5-flash': 'Gemini 1.5 Flash',
-    'gemini-1.5-pro': 'Gemini 1.5 Pro',
     'gemini-2.0-flash-lite': 'Gemini 2.0 Flash-Lite',
+    'gemini-1.5-pro': 'Gemini 1.5 Pro',
+    'gemini-1.5-flash': 'Gemini 1.5 Flash',
   };
 
   static const _modelDescriptions = {
+    'gemini-2.0-pro-exp': 'En gelişmiş model — karmaşık ve uzun belgeler için.',
     'gemini-2.0-flash': 'Hızlı ve güçlü — çoğu belge için ideal.',
-    'gemini-1.5-flash': 'Dengeli hız ve kalite.',
-    'gemini-1.5-pro': 'En yüksek kalite, karmaşık belgeler için.',
-    'gemini-2.0-flash-lite': 'En hızlı seçenek, basit belgeler için.',
+    'gemini-2.0-flash-lite': 'En hızlı ve en ekonomik seçenek.',
+    'gemini-1.5-pro': 'Eski nesil — yüksek kalite, uzun bağlam desteği.',
+    'gemini-1.5-flash': 'Eski nesil — dengeli hız ve kalite.',
   };
 
   @override

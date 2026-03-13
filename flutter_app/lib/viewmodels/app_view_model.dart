@@ -45,10 +45,11 @@ class AppViewModel extends ChangeNotifier {
 
   // MARK: - Available Models
   static const List<String> availableModels = [
+    'gemini-2.0-pro-exp',
     'gemini-2.0-flash',
-    'gemini-1.5-flash',
-    'gemini-1.5-pro',
     'gemini-2.0-flash-lite',
+    'gemini-1.5-pro',
+    'gemini-1.5-flash',
   ];
 
   SharedPreferences? _prefs;
