@@ -11,7 +11,7 @@ Gemini API ile desteklenen cross-platform Flutter uygulaması. Yüklediğiniz sl
 | 📋 **Hızlı Tekrar Tablosu** | Kavram → Açıklama formatında özet tablo |
 | ❓ **Çalışma Soruları** | Materyale dayalı 10 düşündürücü soru |
 | 🃏 **Flaşkartlar** | Dokunarak çevirilen etkileşimli soru/cevap kartları |
-| 🔗 **Paylaşım** | Analiz sonuçlarını metin olarak paylaşın |
+| 🔗 **Paylaşım** | Analiz sonuçlarını panoya kopyalayın |
 
 ## Gereksinimler
 
