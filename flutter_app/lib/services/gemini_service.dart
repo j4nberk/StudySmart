@@ -94,11 +94,16 @@ class GeminiService {
 
     // Extract candidate text from Gemini response
     final candidates = responseBody['candidates'] as List?;
-    final candidateText = candidates
-        ?.cast<Map<String, dynamic>>()
-        .firstOrNull?['content']?['parts']
-        ?.cast<Map<String, dynamic>>()
-        .firstOrNull?['text'] as String?;
+    String? candidateText;
+
+    if (candidates != null && candidates.isNotEmpty) {
+      final firstCandidate = candidates.first as Map<String, dynamic>?;
+      final parts = firstCandidate?['content']?['parts'] as List?;
+      if (parts != null && parts.isNotEmpty) {
+        final firstPart = parts.first as Map<String, dynamic>?;
+        candidateText = firstPart?['text'] as String?;
+      }
+    }
 
     if (candidateText == null || candidateText.isEmpty) {
       throw AppError.responseParsingFailed('Yanıt içeriği boş');

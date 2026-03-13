@@ -280,7 +280,7 @@ class _StatusCard extends StatelessWidget {
 class _ResultPreviewCard extends StatelessWidget {
   const _ResultPreviewCard({required this.result, required this.onOpen});
 
-  final dynamic result;
+  final AnalysisResult result;
   final VoidCallback onOpen;
 
   @override

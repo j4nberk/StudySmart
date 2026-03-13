@@ -43,7 +43,6 @@ class PDFService {
         }
       }
     } catch (e) {
-      doc.dispose();
       throw AppError.pdfExtractionFailed('Metin çıkarılamadı: $e');
     } finally {
       doc.dispose();

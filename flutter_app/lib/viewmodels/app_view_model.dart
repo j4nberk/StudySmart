@@ -116,6 +116,7 @@ class AppViewModel extends ChangeNotifier {
   bool get canAnalyze =>
       examQuestionsDocument != null &&
       studyMaterials.isNotEmpty &&
+      _apiKey.trim().isNotEmpty &&
       !isAnalyzing;
 
   /// Sends documents to Gemini for analysis and stores the result.

@@ -67,11 +67,11 @@ class DocumentUploadView extends StatelessWidget {
           else
             _DocumentRow(
               document: vm.examQuestionsDocument!,
-              onRemove: () {
-                vm.examQuestionsDocument = null;
-                vm.notifyListeners();
-              },
+              onRemove: vm.clearExamQuestionsDocument,
             ),
+
+
+
 
           const SizedBox(height: 24),
 
@@ -194,6 +194,15 @@ class DocumentUploadView extends StatelessWidget {
   }
 }
 
+// MARK: - AppViewModel Extensions
+
+extension AppViewModelDocumentUploadExtensions on AppViewModel {
+  void clearExamQuestionsDocument() {
+    examQuestionsDocument = null;
+    notifyListeners();
+  }
+}
+
 // MARK: - Supporting Widgets
 
 class _SectionLabel extends StatelessWidget {
@@ -298,16 +307,15 @@ class _UploadPlaceholder extends StatelessWidget {
 class _DocumentRow extends StatelessWidget {
   const _DocumentRow({required this.document, required this.onRemove});
 
-  final dynamic document;
+  final Document document;
   final VoidCallback onRemove;
 
   @override
   Widget build(BuildContext context) {
-    final wordCount = document.extractedText.trim().isEmpty
+    final String trimmedText = document.extractedText.trim();
+    final int wordCount = trimmedText.isEmpty
         ? 0
-        : (document.extractedText.trim() as String)
-            .split(RegExp(r'\s+'))
-            .length;
+        : trimmedText.split(RegExp(r'\s+')).length;
 
     return StudySmartCard(
       cornerRadius: 16,
@@ -332,7 +340,7 @@ class _DocumentRow extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  document.name as String,
+                  document.name,
                   style: const TextStyle(
                     color: StudySmartPalette.textPrimary,
                     fontWeight: FontWeight.w500,

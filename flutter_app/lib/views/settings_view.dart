@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../viewmodels/app_view_model.dart';
 import '../theme/study_smart_theme.dart';
 
@@ -309,14 +310,40 @@ class _SettingsViewState extends State<SettingsView> {
     );
   }
 
-  void _openUrl(BuildContext context, String url) {
-    // In production, use url_launcher package
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Açılıyor: $url'),
-        backgroundColor: StudySmartPalette.surface,
-      ),
-    );
+  Future<void> _openUrl(BuildContext context, String url) async {
+    final uri = Uri.tryParse(url);
+    if (uri == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Geçersiz bağlantı'),
+          backgroundColor: StudySmartPalette.surface,
+        ),
+      );
+      return;
+    }
+
+    try {
+      final launched = await launchUrl(
+        uri,
+        mode: LaunchMode.externalApplication,
+      );
+
+      if (!launched) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Bağlantı açılamadı'),
+            backgroundColor: StudySmartPalette.surface,
+          ),
+        );
+      }
+    } catch (_) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Bağlantı açılırken bir hata oluştu'),
+          backgroundColor: StudySmartPalette.surface,
+        ),
+      );
+    }
   }
 }
 

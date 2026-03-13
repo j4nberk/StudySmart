@@ -110,7 +110,7 @@ class _AnalysisViewState extends State<AnalysisView> {
 
     buffer.writeln('📚 STUDYSMART ANALİZ SONUÇLARI');
     buffer.writeln('');
-    buffer.writeln('⭐ ÖNEMLI NOKTALAR');
+    buffer.writeln('⭐ ÖNEMLİ NOKTALAR');
     for (var i = 0; i < result.keyPoints.length; i++) {
       buffer.writeln('${i + 1}. ${result.keyPoints[i]}');
     }

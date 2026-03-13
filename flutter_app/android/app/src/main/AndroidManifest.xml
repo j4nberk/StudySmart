@@ -5,10 +5,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
 
-    <!-- Required for file_picker on Android 13+ (only reads documents/PDFs) -->
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-
     <!-- Required for making HTTPS requests to the Gemini API -->
     <uses-permission android:name="android.permission.INTERNET" />
 

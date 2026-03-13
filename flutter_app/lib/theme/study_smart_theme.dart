@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 // MARK: - StudySmart Color Palette
@@ -150,12 +151,18 @@ class _GlowCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: color,
+    return ImageFiltered(
+      imageFilter: ImageFilter.blur(
+        sigmaX: blurRadius,
+        sigmaY: blurRadius,
+      ),
+      child: Container(
+        width: size,
+        height: size,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: color,
+        ),
       ),
     );
   }

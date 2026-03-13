@@ -41,7 +41,10 @@ class AnalysisResult {
 
   @override
   int get hashCode =>
-      keyPoints.hashCode ^ reviewTable.hashCode ^ studyQuestions.hashCode ^ flashcards.hashCode;
+      keyPoints.toString().hashCode ^
+      reviewTable.toString().hashCode ^
+      studyQuestions.toString().hashCode ^
+      flashcards.toString().hashCode;
 }
 
 /// A single row in the quick review table.
