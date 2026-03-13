@@ -110,6 +110,12 @@ class AppViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Clears the selected exam questions document.
+  void clearExamQuestionsDocument() {
+    examQuestionsDocument = null;
+    notifyListeners();
+  }
+
   // MARK: - Analysis
 
   /// Whether the app can run an analysis (both docs loaded, API key set, not already running).

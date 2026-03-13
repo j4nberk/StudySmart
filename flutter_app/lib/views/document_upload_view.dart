@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:file_picker/file_picker.dart';
+import '../models/document.dart';
 import '../viewmodels/app_view_model.dart';
 import '../theme/study_smart_theme.dart';
 
@@ -191,15 +192,6 @@ class DocumentUploadView extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-// MARK: - AppViewModel Extensions
-
-extension AppViewModelDocumentUploadExtensions on AppViewModel {
-  void clearExamQuestionsDocument() {
-    examQuestionsDocument = null;
-    notifyListeners();
   }
 }
 
